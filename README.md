@@ -1,18 +1,18 @@
 # Redis
 
-  This redis file is on the Library management application which includes the details about student access, staff access, details about the book and including the return report.
-These informations includes:
+  This redis file is on the Library management application which is designed with the details about students, staff, books and details about book issual.
+It is decided that the database should contain four entity types :
       
-        1.student id ,student name, city, department
-        2.book id, title, author, year of publication
-        3.staff name, staff id, customer id, department
-        4.book id, return customer id, status
+        1.Student details ,abbreviated "STUD_DETAILS".
+        2.Book details, abbreviated "BOOKS".
+        3.Staff details, abbreviated "STAFF_DETAILS".
+        4.Book issual details, abbreviated "BOOK_ISSUAL".
         
- This includes four attributes:
+ The next step in design process is determining attributes for each entity:
         
-        1.STUD_ACCESS :This details about the student
-        2.BOOKS : This is to know the details of the book and name of the author
-        3.STAFF_DETAILS:This details about the staff
-        4.RETURN_REPORT:This tells about customer who have taken the book and status of the book
+        1.The STUD_DETAILS entity maintains the student id, student name and department.
+        2.The BOOKS entity maintains the book id, title of the book, author and year of publication.
+        3.The STAFF_DETAILS maintains staff name, staff id and the department.
+        4.The BOOK_ISSUAL maintains book id, access id, issual date and the return date.
         
- The data is stored as a set with entity name as set names and attribute name as key followed by values .Each set has over three attributes with values associated with it.
+ The data is stored as a set with entity name as set names and attribute name as key followed by values .Each set has over three or four attributes with values associated with it.      
