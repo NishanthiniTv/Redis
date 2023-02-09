@@ -1,10 +1,8 @@
-127.0.0.1:6379> SADD STUD_ACCESS : stud_id 111 112 113 114
+127.0.0.1:6379> SADD STUD_DETAILS : stud_id 111 112 113 114
 (integer) 6
-127.0.0.1:6379> SADD STUD_ACCESS : stud_name Nisha Sindhu Suriya Nandhu
+127.0.0.1:6379> SADD STUD_DETAILS : stud_name Nisha Sindhu Suriya Nandhu
 (integer) 5
-127.0.0.1:6379> SADD STUD_ACCESS : city erode chennimalai thindal erode
-(integer) 4
-127.0.0.1:6379> SADD STUD_ACCESS : dept IT BME CSE MDE
+127.0.0.1:6379> SADD STUD_DETAILS : dept IT BME CSE MDE
 (integer) 5
 127.0.0.1:6379> SADD BOOKS : b_id b01 b02 b03
 (integer) 5
@@ -18,39 +16,35 @@
 (integer) 5
 127.0.0.1:6379> SADD STAFF_DETAILS : id st1 st2 st3
 (integer) 4
-127.0.0.1:6379> SADD STAFF_DETAILS : cust_id 789 456 123
-(integer) 4
 127.0.0.1:6379> SADD STAFF_DETAILS : dept IT BME CSE
 (integer) 4
-127.0.0.1:6379> SADD RETURN_REPORT : bid b11 b21 b57
-(integer) 5
-127.0.0.1:6379> SADD RETURN_REPORT : rc_id 58 36 68
+127.0.0.1:6379> SADD BOOK_ISSUAL : bid 98 56 47 58
+(integer) 6
+127.0.0.1:6379> SADD BOOK_ISSUAL : access_id 111 354 789
 (integer) 4
-127.0.0.1:6379> SADD RETURN_REPORT : status good good damaged
-(integer) 3
+127.0.0.1:6379> SADD BOOK_ISSUAL : issual_date 15/1 1/2 24/4
+(integer) 4
+127.0.0.1:6379> SADD BOOK_ISSUAL : return_date 23/1 7/2 27/1
+(integer) 4
 127.0.0.1:6379> SMEMBERS STUD-ACCESS
 (empty list or set)
 127.0.0.1:6379> SMEMBERS STUD_ACCESS
  1) "113"
  2) "Nisha"
- 3) "city"
- 4) "Suriya"
- 5) "erode"
- 6) "114"
- 7) "Nandhu"
- 8) "stud_id"
- 9) "stud_name"
-10) "thindal"
-11) ":"
-12) "111"
-13) "IT"
-14) "chennimalai"
-15) "Sindhu"
-16) "112"
-17) "dept"
-18) "CSE"
-19) "MDE"
-20) "BME"
+ 3) "Suriya"
+ 4) "114"
+ 5) "Nandhu"
+ 6) "stud_id"
+ 7) "stud_name"
+ 8) ":"
+ 9) "111"
+10) "IT"
+11) "Sindhu"
+12) "112"
+13) "dept"
+14) "CSE"
+15) "MDE"
+16) "BME"
 127.0.0.1:6379> SMEMBERS BOOKS
  1) "Smith"
  2) "author"
@@ -75,31 +69,33 @@
  3) "IT"
  4) "st3"
  5) "dept"
- 6) "123"
- 7) "456"
- 8) "cust_id"
- 9) "sathya"
-10) "st1"
-11) "st2"
-12) "id"
-13) "name"
-14) "BME"
-15) "789"
-16) ":"
-17) "CSE"
-127.0.0.1:6379> SMEMBERS RETURN_REPORT
- 1) "b21"
- 2) "damaged"
- 3) "b57"
- 4) "bid"
- 5) "58"
- 6) "status"
- 7) "rc_id"
- 8) "36"
- 9) "good"
-10) "68"
-11) "b11"
+ 6) "sathya"
+ 7) "st1"
+ 8) "st2"
+ 9) "id"
+10) "name"
+11) "BME"
 12) ":"
+13) "CSE"
+127.0.0.1:6379> SMEMBERS BOOK_ISSUAL
+ 1) "23/1"
+ 2) "issual_date"
+ 3) "return_date"
+ 4) "98"
+ 5) "bid"
+ 6) "15/1"
+ 7) "access_id"
+ 8) "56"
+ 9) ":"
+10) "789"
+11) "354"
+12) "1/2"
+13) "24/4"
+14) "47"
+15) "58"
+16) "7/2"
+17) "111"
+18) "27/1"
 127.0.0.1:6379> SADD DAMAGED_BOOK : bid 789 259 658 124
 (integer) 6
 127.0.0.1:6379> SPOP DAMAGED_BOOK
